@@ -1,0 +1,26 @@
+{
+  "name": "custard",
+  "version": "0.0.1",
+  "authors": [
+    "Kei Goto <gem@zeneffect.co.jp>"
+  ],
+  "description": "Custard is the library of the preset CSS",
+  "main": [
+    "vendor/assets/stylesheets/custard/custard.scss",
+    "vendor/assets/stylesheets/custard/custard-min.css"
+  ],
+  "keywords": [
+    "css",
+    "preset"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/zeneffect/custard",
+  "ignore": [
+    "**/.*",
+    "lib",
+    "spec",
+    "*.gemspec",
+    "Rakefile",
+    "Gemfile"
+  ]
+}
