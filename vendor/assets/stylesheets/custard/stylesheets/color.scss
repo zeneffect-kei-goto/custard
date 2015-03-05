@@ -1,0 +1,16 @@
+@import '../variables';
+
+@mixin custard-setup-color {
+
+  $color: #{$custard-namespace}#{$custard-prefix-color};
+
+  @each $n in $custard-hex-list {
+    $color-hex: "##{$n}#{$n}#{$n}";
+
+    .#{color}-gray#{$n} {
+      color: #{$color-hex};
+    }
+  }
+}
+
+@include custard-setup-color;

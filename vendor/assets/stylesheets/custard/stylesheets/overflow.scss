@@ -1,0 +1,24 @@
+@import '../variables';
+
+@mixin custard-setup-over {
+
+  $over: #{$custard-namespace}#{$custard-prefix-overflow};
+
+  .#{$over}-hidden {
+    overflow: hidden;
+  }
+
+  .#{over}-scroll {
+    overflow: scroll;
+  }
+
+  .#{over}-visible {
+    overflow: visible;
+  }
+
+  .#{over}-auto {
+    overflow: auto;
+  }
+}
+
+@include custard-setup-over;

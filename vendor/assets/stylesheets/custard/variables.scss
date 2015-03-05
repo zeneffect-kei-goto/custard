@@ -1,0 +1,41 @@
+
+$custard-variables-included: true;
+
+$custard-namespace: '' !default;
+$custard-prefix-border: bdr !default;
+$custard-prefix-color: color !default;
+$custard-prefix-cursor: cur !default;
+$custard-prefix-display: ds !default;
+$custard-prefix-font: font !default;
+$custard-prefix-margin: mgn !default;
+$custard-prefix-padding: pdg !default;
+$custard-prefix-overflow: over !default;
+$custard-prefix-position: posi !default;
+$custard-prefix-text: text !default;
+$custard-prefix-wrap: wrap !default;
+$custard-prefix-z-index: z-index !default;
+
+$custard-vendor-prefixes: (-ms-, -webkit-, -o-, -moz-, '') !default;
+
+@mixin with-vendor-prefix($name, $value) {
+  @each $prefix in $custard-vendor-prefixes {
+    #{$prefix}#{$name}: $value;
+  }
+}
+
+$custard-hex-list: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F;
+
+$custard-direction-hash: (
+  '': '',
+  -t: -top,
+  -tb: (-top, -bottom),
+  -tr: (-top, -right),
+  -trb: (-top, -right, -bottom),
+  -trl: (-top, -right, -left),
+  -r: -right,
+  -rb: (-right, -bottom),
+  -rbl: (-right, -bottom, -left),
+  -b: -bottom,
+  -bl: (-bottom, -left),
+  -l: -left
+);

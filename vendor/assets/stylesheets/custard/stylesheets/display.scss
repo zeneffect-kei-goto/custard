@@ -1,0 +1,127 @@
+@import '../mixin/display_flex';
+
+@mixin custard-setup-display {
+
+  $ds: #{$custard-namespace}#{$custard-prefix-display};
+
+  .#{$ds}-none {
+    display: none;
+  }
+
+  .#{ds}-inline {
+    display: inline;
+  }
+
+  .#{$ds}-block {
+    display: block;
+  }
+
+  .#{$ds}-inline-block {
+    display: inline-block;
+  }
+
+  .#{$ds}-flex {
+    @include display-flex;
+
+    .flex-fixed {
+      @include flex(0 0 auto);
+    }
+
+    .flex-1 {
+      @include flex(1 0 auto);
+    }
+
+    &.centering {
+      @include justify-content(center);
+      @include align-items(center);
+    }
+
+    &.direct-column {
+      @include flex-direction(column);
+    }
+
+    &.just-center {
+      @include justify-content(center);
+    }
+
+    &.just-space {
+      @include justify-content(space-between);
+    }
+
+    &.just-start {
+      @include justify-content(flex-start);
+    }
+
+    &.just-end {
+      @include justify-content(flex-end);
+    }
+
+    &.align-center {
+      @include align-items(center);
+    }
+
+    &.align-start {
+      @include align-items(flex-start);
+    }
+
+    &.align-end {
+      @include align-items(flex-end);
+    }
+
+    &.flex-wrap {
+      @include flex-wrap(wrap);
+    }
+
+    &.flex-nowrap {
+      @include flex-wrap(nowrap);
+    }
+
+    &.flex-reverse {
+      @include flex-wrap(wrap-reverse);
+    }
+  }
+
+  $justify-list:
+    left, right, center, space, around,
+    top, bottom, middle, column-space, column-around;
+
+  $align-list: '', start, end, center, baseline, stretch;
+
+  $wrap-list: '', wrap, wrap-reverse;
+
+  @each $justify in $justify-list {
+    $name-base: ".#{ds}-flex-#{$justify}";
+
+    @each $align in $align-list {
+
+      $name-align: '';
+
+      @if $align != '' {
+        $name-align: "-#{$align}";
+      }
+
+      @each $wrap in $wrap-list {
+
+        $name-wrap: '';
+
+        @if $wrap != '' {
+          $name-wrap: "-#{$wrap}";
+        }
+
+        #{$name-base}#{$name-align}#{$name-wrap} {
+          @include display-flex($justify);
+
+          @if $align != '' {
+            @include align-items($align);
+          }
+
+          @if $wrap != '' {
+            @include flex-wrap($wrap);
+          }
+        }
+      }
+    }
+  }
+}
+
+@include custard-setup-display

@@ -1,0 +1,86 @@
+@import '../variables';
+
+@mixin custard-setup-mgn-pdg {
+
+  $direction-hash: $custard-direction-hash;
+
+  $directive-hash: (
+    #{$custard-namespace}#{$custard-prefix-margin}: margin,
+    #{$custard-namespace}#{$custard-prefix-padding}: padding
+  );
+
+  .mgn-centering {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @each $prefix, $directive in $directive-hash {
+
+    .#{$prefix}-0 {
+      #{$directive}: 0;
+    }
+
+    @each $key, $direction-list in $direction-hash {
+
+      .#{$prefix}#{$key}-0 {
+        @each $direction in $direction-list {
+          #{$directive}#{$direction}: 0;
+        }
+      }
+
+      @for $n from 1 through 9 {
+
+        @each $unit in px, em {
+
+          .#{$prefix}#{$key}-#{$n}#{$unit} {
+            @each $direction in $direction-list {
+              #{$directive}#{$direction}: #{$n}#{$unit};
+            }
+          }
+
+          @if $unit == em {
+            .#{$prefix}#{$key}-0#{$n}#{$unit} {
+              @each $direction in $direction-list {
+                $value: "0.#{$n}#{$unit}";
+                #{$directive}#{$direction}: #{$value};
+              }
+            }
+
+            .#{$prefix}#{$key}-i#{$n}#{$unit} {
+              @each $direction in $direction-list {
+                $value: "1.#{$n}#{$unit}";
+                #{$directive}#{$direction}: #{$value};
+              }
+            }
+          } @else {
+            .#{$prefix}#{$key}-1#{$n}#{$unit} {
+              @each $direction in $direction-list {
+                #{$directive}#{$direction}: 1#{$n}#{$unit};
+              }
+            }
+
+            .#{$prefix}#{$key}-#{$n}0#{$unit} {
+              @each $direction in $direction-list {
+                #{$directive}#{$direction}: #{$n}0#{$unit};
+              }
+            }
+          }
+        }
+      }
+
+      .#{$prefix}#{$key}-100px {
+        @each $direction in $direction-list {
+          #{$directive}#{$direction}: 100px;
+        }
+      }
+
+      .#{$prefix}#{$key}-10em {
+        @each $direction in $direction-list {
+          #{$directive}#{$direction}: 10em;
+        }
+      }
+    }
+  }
+}
+
+@include custard-setup-mgn-pdg;

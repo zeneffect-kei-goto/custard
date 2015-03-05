@@ -1,0 +1,20 @@
+@import '../variables';
+
+@mixin custard-setup-z-index {
+
+  $z-index: #{$custard-namespace}#{$custard-prefix-z-index};
+
+  @for $n from 1 through 9 {
+
+    @each $multiplier in 1, 10, 100, 1000 {
+
+      $number: $n * $multiplier;
+
+      .#{$z-index}-#{$number} {
+        z-index: $number;
+      }
+    }
+  }
+}
+
+@include custard-setup-z-index;

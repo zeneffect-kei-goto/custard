@@ -21,6 +21,7 @@
     "spec",
     "*.gemspec",
     "Rakefile",
-    "Gemfile"
+    "Gemfile",
+    ".sass-cache"
   ]
 }

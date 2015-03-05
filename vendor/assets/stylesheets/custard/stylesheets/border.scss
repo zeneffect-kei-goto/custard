@@ -1,0 +1,37 @@
+@import '../variables';
+
+@mixin custard-setup-border {
+
+  $bdr: #{$custard-namespace}#{$custard-prefix-border};
+
+  $direction-hash: $custard-direction-hash;
+
+  @each $hex in $custard-hex-list {
+
+    $color: "##{$hex}#{$hex}#{$hex}";
+
+    @for $width from 1px through 5px {
+
+      @each $key, $direction-list in $direction-hash {
+
+        .#{bdr}#{$key}-#{$width}-gray#{$hex} {
+          @each $direction in $direction-list {
+            border#{$direction}: $width solid #{$color};
+          }
+        }
+      }
+    }
+  }
+
+  @for $size from 1px through 10px {
+    .#{bdr}-radius-#{$size} {
+      border-radius: $size;
+    }
+  }
+
+  .#{bdr}-radius-circle {
+    border-radius: 50%;
+  }
+}
+
+@include custard-setup-border;

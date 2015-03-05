@@ -1,0 +1,20 @@
+@import '../variables';
+
+@mixin custard-setup-text {
+
+  $text: #{$custard-namespace}#{$custard-prefix-text};
+
+  @each $position in center, left, right {
+    .#{$text}-#{$position} {
+      text-align: $position;
+    }
+  }
+
+  .#{$text}-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+@include custard-setup-text;

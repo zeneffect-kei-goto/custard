@@ -1,0 +1,65 @@
+@import '../variables';
+
+@mixin custard-setup-font {
+
+  $font: #{$custard-namespace}#{$custard-prefix-font};
+
+  @for $n from 1 through 9 {
+
+    $size: "0.#{$n}em";
+
+    .#{$font}-0#{$n}em {
+      font-size: #{$size};
+    }
+
+    $size: "1.#{$n}em";
+
+    .#{$font}-i#{$n}em {
+      font-size: #{$size};
+    }
+
+    $size: "#{$n}em";
+
+    .#{$font}-#{$n}em {
+      font-size: #{$size};
+    }
+
+    .#{$font}-#{$n}px {
+      font-size: 1px * $n;
+    }
+
+    .#{$font}-1#{$n}px {
+      font-size: 10px + $n;
+    }
+
+    .#{$font}-2#{$n}px {
+      font-size: 20px + $n;
+    }
+
+    .#{$font}-#{$n}00 {
+      font-weight: $n * 100;
+    }
+  }
+
+  .#{$font}-10px {
+    font-size: 10px;
+  }
+
+  .#{$font}-20px {
+    font-size: 20px;
+  }
+
+  @each $size in xx-small, x-small, small, medium, large, x-large, xx-large {
+    .#{$font}-#{$size} {
+      font-size: $size;
+    }
+  }
+
+  @each $weight in normal, bold, lighter, bolder {
+    .#{$font}-#{weight} {
+      font-weight: $weight;
+    }
+  }
+}
+
+@include custard-setup-font;

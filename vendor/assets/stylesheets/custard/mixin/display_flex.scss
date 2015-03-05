@@ -1,0 +1,78 @@
+@import '../variables';
+
+@mixin flex-direction($arg) {
+  @include with-vendor-prefix(flex-direction, $arg);
+}
+
+@mixin justify-content($arg) {
+  @if $arg == space-between {
+    -ms-flex-pack: justify;
+  } @else if $arg == flex-start {
+    -ms-flex-pack: start;
+  } @else if $arg == flex-end {
+    -ms-flex-pack: end;
+  } @else {
+    -ms-flex-pack: $arg;
+  }
+
+  -webkit-justify-content: $arg;
+  -moz-justify-content: $arg;
+  justify-content: $arg;
+}
+
+@mixin align-items($arg) {
+  @if $arg == flex-start {
+    -ms-flex-align: start;
+  } @else if $arg == flex-end {
+    -ms-flex-align: end;
+  } @else {
+    -ms-flex-align: $arg;
+  }
+
+  -webkit-align-items: $arg;
+  -moz-align-items: $arg;
+  align-items: $arg;
+}
+
+@mixin flex-wrap($arg) {
+  @include with-vendor-prefix(flex-wrap, $arg);
+}
+
+@mixin flex($arg) {
+  @include with-vendor-prefix(flex, $arg);
+}
+
+@mixin display-flex($arg: '') {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  @if $arg == left {
+    @include justify-content(flex-start);
+  } @else if $arg == right {
+    @include justify-content(flex-end);
+  } @else if $arg == center {
+    @include justify-content(center);
+  } @else if $arg == space {
+    @include justify-content(space-between);
+  } @else if $arg == around {
+    @include justify-content(space-around);
+  } @else if $arg == column {
+    @include flex-direction(column);
+  } @else if $arg == top {
+    @include flex-direction(column);
+    @include justify-content(flex-start);
+  } @else if $arg == bottom {
+    @include flex-direction(column);
+    @include justify-content(flex-end);
+  } @else if $arg == middle {
+    @include flex-direction(column);
+    @include justify-content(center);
+  } @else if $arg == column-space {
+    @include flex-direction(column);
+    @include justify-content(space-between);
+  } @else if $arg == column-around {
+    @include flex-direction(column);
+    @include justify-content(space-around);
+  }
+}

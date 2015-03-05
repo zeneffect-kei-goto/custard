@@ -1,0 +1,21 @@
+@import '../variables';
+
+@mixin custard-setup-wrap {
+
+  $wrap: #{$custard-namespace}#{$custard-prefix-wrap};
+
+  .#{$wrap}-all {
+    width: 100%;
+    height: 100%;
+  }
+
+  .#{$wrap}-width {
+    width: 100%;
+  }
+
+  .#{$wrap}-height {
+    height: 100%;
+  }
+}
+
+@include custard-setup-wrap;

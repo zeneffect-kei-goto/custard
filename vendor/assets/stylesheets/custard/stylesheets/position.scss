@@ -1,0 +1,27 @@
+@import '../variables';
+
+@mixin custard-setup-posi {
+
+  $posi: #{$custard-namespace}#{$custard-prefix-position};
+
+  .#{$posi}-relative,
+  .#{$posi}-rel {
+    position: relative;
+  }
+
+  .#{$posi}-absolute,
+  .#{$posi}-abs {
+    position: absolute;
+  }
+
+  .#{$posi}-static {
+    position: static;
+  }
+
+  .#{$posi}-fixed,
+  .#{$posi}-fix {
+    position: fixed;
+  }
+}
+
+@include custard-setup-posi;
