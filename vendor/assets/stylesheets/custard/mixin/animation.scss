@@ -1,0 +1,40 @@
+@import '../variables';
+
+@mixin keyframes($name) {
+
+  @-ms-keyframes $name {
+    @content;
+  }
+
+  @-webkit-keyframes $name {
+    @content;
+  }
+
+  @-moz-keyframes $name {
+    @content;
+  }
+
+  @-o-keyframes $name {
+    @content;
+  }
+
+  @keyframes $name {
+    @content;
+  }
+}
+
+@mixin animation-name($name) {
+  @include with-vendor-prefix(animation-name, $name);
+}
+
+@mixin animation-duration($delay) {
+  @include with-vendor-prefix(animation-duration, $delay);
+}
+
+@mixin animation-timing-function($timing) {
+  @include with-vendor-prefix(animation-timing-function, $timing);
+}
+
+@mixin animation-fill-mode($mode) {
+  @include with-vendor-prefix(animation-fill-mode, $mode);
+}
