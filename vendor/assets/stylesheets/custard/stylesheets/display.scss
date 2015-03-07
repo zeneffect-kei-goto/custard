@@ -112,6 +112,13 @@
           @include display-flex($justify);
 
           @if $align != '' {
+
+            @if $align == 'start' {
+              $align: flex-start;
+            } @else if $align == 'end' {
+              $align: flex-end;
+            }
+
             @include align-items($align);
           }
 
