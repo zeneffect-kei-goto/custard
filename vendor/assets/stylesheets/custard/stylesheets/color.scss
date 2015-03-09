@@ -4,10 +4,10 @@
 
   $color: #{$custard-namespace}#{$custard-prefix-color};
 
-  @each $n in $custard-hex-list {
-    $color-hex: "##{$n}#{$n}#{$n}";
+  @each $hex in $custard-hex-list {
+    $color-hex: "##{$hex}#{$hex}#{$hex}";
 
-    .#{color}-gray#{$n} {
+    .#{color}-gray#{$hex} {
       color: #{$color-hex};
     }
   }

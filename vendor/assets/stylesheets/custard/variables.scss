@@ -2,14 +2,16 @@
 $custard-variables-included: true;
 
 $custard-namespace: '' !default;
+
+$custard-prefix-background: bg !default;
 $custard-prefix-border: bdr !default;
 $custard-prefix-color: color !default;
 $custard-prefix-cursor: cur !default;
 $custard-prefix-display: ds !default;
 $custard-prefix-font: font !default;
 $custard-prefix-margin: mgn !default;
-$custard-prefix-padding: pdg !default;
 $custard-prefix-overflow: over !default;
+$custard-prefix-padding: pdg !default;
 $custard-prefix-position: posi !default;
 $custard-prefix-text: text !default;
 $custard-prefix-wrap: wrap !default;

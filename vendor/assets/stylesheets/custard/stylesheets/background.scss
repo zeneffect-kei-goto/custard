@@ -1,0 +1,50 @@
+@import '../variables';
+
+@mixin custard-setup-background {
+
+  $bg: #{$custard-namespace}#{$custard-prefix-background};
+
+  @each $hex in $custard-hex-list {
+    $color-hex: "##{$hex}#{$hex}#{$hex}";
+
+    .#{$bg}-gray#{$hex} {
+      background-color: #{$color-hex};
+    }
+  }
+
+  .#{$bg}-no-repeat {
+    background-repeat: no-repeat;
+  }
+
+  .#{$bg}-center {
+    background-position: center;
+  }
+
+  .#{$bg}-cover {
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .#{$bg}-contain {
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .#{$bg}-center-cover {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .#{$bg}-center-contain {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  .#{$bg}-fixed {
+    background-attachment: fixed;
+  }
+}
+
+@include custard-setup-background;

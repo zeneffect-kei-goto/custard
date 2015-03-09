@@ -1,3 +1,78 @@
+.bg-gray0 {
+  background-color: #000; }
+
+.bg-gray1 {
+  background-color: #111; }
+
+.bg-gray2 {
+  background-color: #222; }
+
+.bg-gray3 {
+  background-color: #333; }
+
+.bg-gray4 {
+  background-color: #444; }
+
+.bg-gray5 {
+  background-color: #555; }
+
+.bg-gray6 {
+  background-color: #666; }
+
+.bg-gray7 {
+  background-color: #777; }
+
+.bg-gray8 {
+  background-color: #888; }
+
+.bg-gray9 {
+  background-color: #999; }
+
+.bg-grayA {
+  background-color: #AAA; }
+
+.bg-grayB {
+  background-color: #BBB; }
+
+.bg-grayC {
+  background-color: #CCC; }
+
+.bg-grayD {
+  background-color: #DDD; }
+
+.bg-grayE {
+  background-color: #EEE; }
+
+.bg-grayF {
+  background-color: #FFF; }
+
+.bg-no-repeat {
+  background-repeat: no-repeat; }
+
+.bg-center {
+  background-position: center; }
+
+.bg-cover {
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.bg-contain {
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.bg-center-cover {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
+
+.bg-center-contain {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; }
+
+.bg-fixed {
+  background-attachment: fixed; }
+
 .bdr-1px-gray0 {
   border: 1px solid #000; }
 
@@ -12709,6 +12784,18 @@
 
 .pdg-l-10em {
   padding-left: 10em; }
+
+.over-hidden {
+  overflow: hidden; }
+
+.over-scroll {
+  overflow: scroll; }
+
+.over-visible {
+  overflow: visible; }
+
+.over-auto {
+  overflow: auto; }
 
 .posi-relative,
 .posi-rel {
