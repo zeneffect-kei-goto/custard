@@ -49,6 +49,10 @@
     font-size: 20px;
   }
 
+  .#{$font}-30px {
+    font-size: 30px;
+  }
+
   @each $size in xx-small, x-small, small, medium, large, x-large, xx-large {
     .#{$font}-#{$size} {
       font-size: $size;
