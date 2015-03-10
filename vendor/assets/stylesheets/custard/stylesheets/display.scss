@@ -23,14 +23,6 @@
   .#{$ds}-flex {
     @include display-flex;
 
-    .flex-fixed {
-      @include flex(0 0 auto);
-    }
-
-    .flex-1 {
-      @include flex(1 0 auto);
-    }
-
     &.centering {
       @include justify-content(center);
       @include align-items(center);
