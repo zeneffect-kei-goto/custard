@@ -7,7 +7,7 @@
   @each $hex in $custard-hex-list {
     $color-hex: "##{$hex}#{$hex}#{$hex}";
 
-    .#{$bg}-gray#{$hex} {
+    .#{$bg}-gray-#{$hex} {
       background-color: #{$color-hex};
     }
   }

@@ -14,7 +14,7 @@
 
       @each $key, $direction-list in $direction-hash {
 
-        .#{bdr}#{$key}-#{$width}-gray#{$hex} {
+        .#{bdr}#{$key}-#{$width}-gray-#{$hex} {
           @each $direction in $direction-list {
             border#{$direction}: $width solid #{$color};
           }
