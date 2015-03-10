@@ -60,7 +60,7 @@
   }
 
   @each $weight in normal, bold, lighter, bolder {
-    .#{$font}-#{weight} {
+    .#{$font}-#{$weight} {
       font-weight: $weight;
     }
   }
